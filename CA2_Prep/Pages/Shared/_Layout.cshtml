@@ -32,7 +32,7 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-page="/EntryForm">New Application</a></li>
                 </ul>
             </div>
         </div>
@@ -47,6 +47,16 @@
             <p>&copy; 2019 - CA2_Prep</p>
         </footer>
     </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

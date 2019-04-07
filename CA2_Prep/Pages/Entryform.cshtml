@@ -1,0 +1,104 @@
+﻿@page
+@model CA2_Prep.Pages.EntryformModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{    
+ ViewData["Title"] = "Entryform";
+}
+
+<h2>Entryform</h2>
+
+@*Field for child's first name*@
+@*<div asp-validation-summary="All"></div>*@
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <div class="data-validation">
+            <label asp-for=Officer.FirstName class="col-sm-2"></label>
+            <input asp-for=Officer.FirstName class="col-sm-2">
+            <Span asp-validation-for="Officer.FirstName"></Span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="data-validation">
+            <label asp-for=Officer.Surname class="col-sm-2"></label>
+            <input asp-for=Officer.Surname class="col-sm-2">
+            <Span asp-validation-for="Officer.Surname"></Span>
+        </div>
+    </div>
+
+    @*Field for child's date of birth*@
+    <div class="form-group">
+        <label asp-for=Officer.DOB class="col-sm-2"></label>
+        <input asp-for=Officer.DOB class="col-sm-2">
+
+        <Span asp-validation-for="Officer.DOB"></Span>
+    </div>
+
+    @*Field for child's gender*@
+    <div class="form-group">
+        <fieldset class="col-sm-2">
+            <legend>Gender</legend>
+            <div>
+                <input type="radio" id="Male" asp-for="Officer.Gender" value="Male">
+                <label for="Male">
+                    Male
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="Female" asp-for="Officer.Gender" value="Female">
+                <label for="Female">
+                    Female
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="Other" asp-for="Officer.Gender" value="Other">
+                <label for="Other">
+                    Other
+                </label>
+            </div>
+            <Span asp-validation-for="Officer.Gender"></Span>
+        </fieldset>
+
+    </div>
+
+    @*Field for which package, full time or part-time,*@
+    <fieldset class="form-group">
+        <legend>Division</legend>
+        <div>
+            <input type="radio" id="Command" asp-for="Officer.Division" value="Command">
+            <label for="Command">
+                Command
+            </label>
+        </div>
+
+        <div>
+            <input type="radio" id="Security" asp-for="Officer.Division" value="Security">
+            <label for="Security">
+                Security
+            </label>
+        </div>
+
+        <div>
+            <input type="radio" id="Engineering" asp-for="Officer.Division" value="Engineering">
+            <label for="Engineering">
+                Engineering
+            </label>
+        </div>
+
+        <div>
+            <input type="radio" id="Science" asp-for="Officer.Division" value="Science">
+            <label for="Science">
+                Science
+            </label>
+        </div>
+
+        <div>
+            <input type="radio" id="Medicine" asp-for="Officer.Division" value="Medicine">
+            <label for="Medicine">
+                Medicine
+            </label>
+        </div>
+
+    </fieldset>
+    <asp-page ="EntryConfirmation" asp-route-id="Officer.ID"><input type="submit" name="Submit" value="Submit" />
+</form>

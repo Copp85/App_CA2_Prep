@@ -1,0 +1,27 @@
+﻿@page
+@model CA2_Prep.Pages.EntryConfirmationModel
+@{
+    ViewData["Title"] = "EntryConfirmation";
+}
+
+<h2>EntryConfirmation</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Divisin</th>
+            
+        </tr>
+    </thead>
+    <tr>
+        <td>@Model.Officer.FirstName</td>
+        <td>@Model.Officer.Surname</td>
+        <th>@Model.Officer.DOB.ToShortDateString()</th>
+        <th>@Model.Officer.Gender</th>
+        <th>@Model.Officer.Division</th>
+    </tr>
+</table>

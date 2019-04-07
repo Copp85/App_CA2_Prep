@@ -1,0 +1,4 @@
+Temp data
+Child details model page and applist page and model page
+
+Order of js and Jquery on layout page
