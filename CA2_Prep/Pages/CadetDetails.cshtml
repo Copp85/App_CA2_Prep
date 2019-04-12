@@ -1,12 +1,10 @@
 ﻿@page
-@model CA2_Prep.Pages.EntryConfirmationModel
+@model CA2_Prep.Pages.CadetDetailsModel
 @{
-    ViewData["Title"] = "EntryConfirmation";
+    ViewData["Title"] = "CadetDetails";
 }
 
-<h2>EntryConfirmation</h2>
-@*To display message*@
-<p>@Model.Message</p>
+<h2>CadetDetails</h2>
 
 <table class="table">
     <thead>
@@ -16,7 +14,7 @@
             <th>DOB</th>
             <th>Gender</th>
             <th>Division</th>
-            
+
         </tr>
     </thead>
     <tr>
@@ -27,3 +25,8 @@
         <th>@Model.Officer.Division</th>
     </tr>
 </table>
+
+<form method="post">
+    <input type="hidden" asp-for=Officer.ID>
+    <button type="submit">Delete</button>
+</form>

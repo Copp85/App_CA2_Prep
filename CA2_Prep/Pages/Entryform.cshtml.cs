@@ -23,7 +23,8 @@ namespace CA2_Prep.Pages
             _db = db;
         }
 
-
+        [TempData]
+        public string Message { get; set; }
 
 
         public void OnGet()
@@ -35,13 +36,21 @@ namespace CA2_Prep.Pages
         {
             //Method to check if the requested confirmation page is valid
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                _db.Officers.Add(Officer);
+                await _db.SaveChangesAsync();
+                Message = $"Cadet {Officer.ID} has been added";
+                return RedirectToPage("EntryConfirmation", new { id = Officer.ID });
+
+            }
+            else
+            {
                 return Page();
+            }
+            
 
-            _db.Officers.Add(Officer);
-            await _db.SaveChangesAsync();
-            return RedirectToPage("EntryConfirmation", new { id = Officer.ID });
-
+          
 
         }
     }

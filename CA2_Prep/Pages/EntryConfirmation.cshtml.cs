@@ -13,6 +13,8 @@ namespace CA2_Prep.Pages
     {
         private readonly StarfleetContext _db;
 
+        //For Tempdata message
+        [TempData]
         public string Message { get; set; }
 
 

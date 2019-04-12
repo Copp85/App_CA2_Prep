@@ -1,0 +1,38 @@
+﻿@page
+@model CA2_Prep.Pages.CadetListModel
+@{
+    ViewData["Title"] = "CadetList";
+}
+
+<h2>CadetList</h2>
+
+<p>@Model.Message</p>
+<p>@Model.DelMessage</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>DOB</th>
+            <th>Division</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var officer in Model.Officers)
+        {
+        <tr>
+            <td>@officer.ID</td>
+            <td>@officer.FirstName</td>
+            <td>@officer.Surname</td>
+            <td>@officer.DOB</td>
+            <td>@officer.Division</td>
+
+            @*<td> <a asp-page="ChildDetails" asp-route-id="@child.ID">Details</a> </td>*@
+            <td> <a asp-page="CadetDetails" asp-route-id="@officer.ID">Details</a> </td>
+        </tr>
+        }
+    </tbody>
+</table>
